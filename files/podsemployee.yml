@@ -8,7 +8,7 @@ metadata:
 spec: 
   containers: 
     - name: employee
-      image: aamantamboli/employee
+      image: rahulunecha/employee
       ports:
         - containerPort: 3000
           protocol: TCP
