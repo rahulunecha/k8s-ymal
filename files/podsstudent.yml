@@ -8,7 +8,7 @@ metadata:
 spec: 
   containers: 
     - name: student
-      image: rahulunecha/student
+      image: rahulunecha/student:latest
       ports:
         - containerPort: 8080
           protocol: TCP
