@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata: 
   name: myemployeeapp
-  namespace: myemployeenamespace
+  namespace: microservices
   labels:
     app: myemployeeapp
 spec: 
@@ -17,7 +17,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: my-service3
-  namespace: myemployeenamespace
+  namespace: microservices
 spec:
   type: LoadBalancer
   selector:
