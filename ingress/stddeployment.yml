@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+        name: student
+        labels:
+            app: student
+spec:
+    replicas: 3
+    strategy: 
+        type: RollingUpdate
+        rollingUpdate:
+          maxSurge: 2   # Maximum number of pods that can be created over the desired replicas
+          maxUnavailable: 2  # Maximum number of pods that can be unavailable during the update 
+    template:
+          metadata: 
+                name: student
+                labels:
+                      app: student
+          spec:
+              containers:
+                  - name: http
+                    image: rahulunecha/student
+                    ports:
+                        - name: http
+                          containerPort: 8080
+                          protocol: TCP      
+    selector:
+        matchLabels:
+            app: student

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+        name: todo
+        labels:
+            app: todo
+spec:
+    replicas: 3
+    strategy: 
+        type: RollingUpdate
+        rollingUpdate:
+          maxSurge: 2   # Maximum number of pods that can be created over the desired replicas
+          maxUnavailable: 2  # Maximum number of pods that can be unavailable during the update 
+    template:
+          metadata: 
+                name: todo
+                labels:
+                      app: todo
+          spec:
+              containers:
+                  - name: http
+                    image: rahulunecha/todo
+                    ports:
+                        - name: http
+                          containerPort: 80
+                          protocol: TCP      
+    selector:
+        matchLabels:
+            app: todo
