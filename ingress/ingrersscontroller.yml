@@ -6,6 +6,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"  # Disable SSL redirection
 spec:
+  ingressClassName: nginx
   rules:
   - host: a11d246e46ccf4a8b82d9d2a856cd000-1005706905.eu-north-1.elb.amazonaws.com  # Replace with your domain for Nginx
     http:
