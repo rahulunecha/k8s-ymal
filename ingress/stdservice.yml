@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: student
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: student
   ports:
