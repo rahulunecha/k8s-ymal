@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"  # Disable SSL redirection
+spec:
+  rules:
+  - host: http://a80fee186cf934c2b9ec161c259d3ebf-742108787.eu-north-1.elb.amazonaws.com  # Replace with your domain for Nginx
+    http:
+      paths:
+      - path: /todo
+        pathType: Prefix
+        backend:
+          service:
+            name: todo  # Replace with your Nginx service name
+            port:
+              number: 80  # Nginx service port
+  - host: http://a73d8a5a4de924948b1470967c9bf911-759774100.eu-north-1.elb.amazonaws.com  # Replace with your domain for Tomcat
+    http:
+      paths:
+      - path: /student
+        pathType: Prefix
+        backend:
+          service:
+            name: student  # Replace with your Tomcat service name
+            port:
+              number: 8080  # Tomcat service port
