@@ -8,7 +8,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"  # Disable SSL redirection
 spec:
   rules:
-  - host: a80fee186cf934c2b9ec161c259d3ebf-742108787.eu-north-1.elb.amazonaws.com  # Replace with your domain for Nginx
+  - host: rucloud.site  # Replace with your domain for Nginx
     http:
       paths:
       - path: /todo
@@ -18,7 +18,7 @@ spec:
             name: todo  # Replace with your Nginx service name
             port:
               number: 80  # Nginx service port
-  - host: a73d8a5a4de924948b1470967c9bf911-759774100.eu-north-1.elb.amazonaws.com  # Replace with your domain for Tomcat
+  - host: rucloud.site  # Replace with your domain for Tomcat
     http:
       paths:
       - path: /student
