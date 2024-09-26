@@ -8,10 +8,10 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"  # Disable SSL redirection
 spec:
   rules:
-  - host: todo.rucloud.site  # Replace with your domain for Nginx
+  - host: rucloud.site  # Replace with your domain for Nginx
     http:
       paths:
-      - path: /todo
+      - path: /
         pathType: Prefix
         backend:
           service:
