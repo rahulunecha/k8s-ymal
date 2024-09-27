@@ -19,7 +19,7 @@ spec:
           spec:
               containers:
                   - name: http
-                    image: nginx:latest
+                    image: rahulunecha/todo
                     ports:
                         - name: http
                           containerPort: 80
