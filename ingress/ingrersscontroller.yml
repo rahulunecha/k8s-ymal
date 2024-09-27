@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: rucloud.site
+  - host: 
     http:
       paths:
         
@@ -25,4 +25,10 @@ spec:
                 name: student
                 port:
                   number: 8080
-  
+         -  path: /employee
+            pathType: Prefix
+            backend:
+              service: 
+                name: employee
+                port:
+                  number: 3000
